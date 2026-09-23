@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Check your email — Old Ways, One A Day</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<main>
+  <section style="max-width:640px">
+    <p class="eyebrow">Old Ways, One A Day</p>
+    <h1 id="head">Have a look in your inbox.</h1>
+    <p id="body">The first five habits are on their way, with a link to the printable if you decide
+    you want the whole thirty days on paper. If nothing arrives in a few minutes, check the spam
+    folder — shared hosting is not famous for its reputation.</p>
+    <p class="actions">
+      <a class="button" href="/">Back to the thirty</a>
+      <a class="button ghost" href="https://dennireed.gumroad.com/l/clewwj">The 30-day printable</a>
+    </p>
+    <p class="fine">An AI-generated character. Not medical, dietary or financial advice.</p>
+  </section>
+</main>
+<script>
+  // Be honest about the edge cases instead of faking a success page.
+  const state = new URLSearchParams(location.search).get("state");
+  const head = document.getElementById("head");
+  const body = document.getElementById("body");
+  if (state === "bad-address") {
+    head.textContent = "That address did not look right.";
+    body.textContent = "Nothing was sent and nothing was stored. Go back and check the address — "
+      + "a typo is the usual reason.";
+  } else if (state === "try-again") {
+    head.textContent = "Something went wrong at our end.";
+    body.textContent = "Your address was not stored. Please try again in a minute; if it keeps "
+      + "failing, email dennisreed143@gmail.com and it will be sorted by hand.";
+  } else if (state === "nothing-to-do") {
+    head.textContent = "Nothing to do here.";
+    body.textContent = "This page is the confirmation for the signup form. Head back and use the "
+      + "form if you want the first five habits.";
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+# the subscriber list lives on the server, not in git
+data/
+*.log
+.DS_Store
