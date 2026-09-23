@@ -1,248 +1,298 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Old Ways, One A Day — thirty old-fashioned habits, one a day</title>
-<meta name="description" content="Thirty old-fashioned habits, one a day, numbered — every one of them watchable here. Printable 30-day workbook, $12.">
+<meta name="description" content="Thirty old-fashioned habits, numbered and read out one a day. Slower mornings, plainer food, mended things. Watch them free, or take the 30-day printable.">
+<link rel="canonical" href="https://theoldways.online/">
 <meta property="og:title" content="Old Ways, One A Day">
-<meta property="og:description" content="One old-fashioned habit a day, numbered. Watch the series, then take the thirty days on paper.">
-<meta property="og:image" content="assets/img/cover.jpg">
-<link rel="stylesheet" href="assets/style.css">
+<meta property="og:description" content="Thirty old-fashioned habits, numbered, one a day.">
+<meta property="og:image" content="https://theoldways.online/assets/img/silas.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/img/silas.jpg">
+<link rel="stylesheet" href="assets/landing.css">
 </head>
 <body>
 
 <header class="bar">
   <a class="brand" href="/">Old Ways, One A Day</a>
   <nav>
-    <a href="#watch">Watch</a>
-    <a href="#thirty">The thirty</a>
-    <a href="#printable">The printable</a>
-    <a class="cta" href="#printable">Get it — $12</a>
+    <button class="link" id="watch-link" type="button">Watch</button>
+    <a href="#the-printable">The printable</a>
+    <a class="cta" href="https://dennireed.gumroad.com/l/clewwj">Get it — $12</a>
   </nav>
 </header>
 
 <main>
+  <!-- ── one screen: faded backdrop, the portrait, the opt-in, the buy button ── -->
+  <section class="hero">
+    <div class="backdrop" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <figure class="portrait">
+        <img src="assets/img/silas.jpg" width="720" height="900"
+             alt="Silas Ward, an older man in a cardigan, sitting on a farmhouse porch.">
+      </figure>
 
-<section class="hero">
-  <div class="hero-copy">
-    <p class="eyebrow">Thirty habits &middot; one a day &middot; numbered</p>
-    <h1>One old-fashioned habit a day.</h1>
-    <p class="lede">Slower mornings, plainer food, mended things, money you can feel leaving your
-    hand. Thirty of them, written down plainly and filmed as they were kept. Keep the one you stop
-    having to think about. Let the rest go.</p>
-    <form class="signup" action="/subscribe.php" method="post">
-      <label for="hero-email">The first five habits, free by email</label>
-      <div class="field">
-        <input id="hero-email" type="email" name="email" placeholder="you@example.com" required>
-        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <button type="submit">Send them</button>
+      <div class="hero-copy">
+        <p class="eyebrow">Thirty habits · one a day · numbered</p>
+        <h1>One old-fashioned habit a day.</h1>
+        <p class="lede">Slower mornings, plainer food, mended things, money you can feel
+        leaving your hand. Thirty of them, kept for a week each and written down plainly.
+        Keep the one you stop having to think about. Let the rest go.</p>
+
+        <form class="signup" action="/subscribe.php" method="post">
+          <label for="email">The first five habits, free by email</label>
+          <div class="field">
+            <input id="email" name="email" type="email" required
+                   placeholder="you@example.com" autocomplete="email"
+                   aria-describedby="signup-note">
+            <input class="hp" type="text" name="website" tabindex="-1"
+                   autocomplete="off" aria-hidden="true">
+            <button type="submit">Send them</button>
+          </div>
+          <p class="tiny" id="signup-note">One message, then nothing unless you ask.
+          No selling your address.</p>
+        </form>
+
+        <div class="actions">
+          <button class="btn" type="button" id="watch-hero">Watch No. 1</button>
+          <a class="btn ghost" href="https://dennireed.gumroad.com/l/clewwj">The printable — $12</a>
+        </div>
       </div>
-      <p class="tiny">One message, then nothing unless you ask. No selling your address.</p>
-    </form>
-    <p class="actions">
-      <a class="btn" href="#watch">Watch No. 1</a>
-      <a class="btn ghost" href="#printable">The printable — $12</a>
-    </p>
-  </div>
-  <figure class="hero-art">
-    <img src="assets/img/silas.jpg" alt="Silas on the farmhouse porch at first light">
-  </figure>
-</section>
-
-<section class="strip" aria-label="Some of the thirty">
-  <img src="assets/img/col_stove.jpg" alt="" loading="lazy">
-  <img src="assets/img/col_window_morning.jpg" alt="" loading="lazy">
-  <img src="assets/img/col_hands_bread.jpg" alt="" loading="lazy">
-  <img src="assets/img/col_field_fog.jpg" alt="" loading="lazy">
-  <img src="assets/img/col_porch_dawn.jpg" alt="" loading="lazy">
-  <img src="assets/img/col_soup_pot.jpg" alt="" loading="lazy">
-  <img src="assets/img/col_garden_basket.jpg" alt="" loading="lazy">
-  <img src="assets/img/col_bread_loaf.jpg" alt="" loading="lazy">
-  <img src="assets/img/col_path_hedgerow.jpg" alt="" loading="lazy">
-  <img src="assets/img/col_boots_path.jpg" alt="" loading="lazy">
-  <img src="assets/img/col_gate_field.jpg" alt="" loading="lazy">
-  <img src="assets/img/col_table_bread.jpg" alt="" loading="lazy">
-</section>
-
-<section id="watch" class="watch">
-  <div class="head">
-    <h2>Watch it here</h2>
-    <p class="sub">Thirty clips, in order. Finish one and the next starts on its own — no feed, no
-    adverts, nothing to scroll past.</p>
-  </div>
-  <div class="player">
-    <video id="player" controls preload="metadata" playsinline width="720" height="1280"
-           poster="assets/img/posters/01_wake_with_the_light.jpg"></video>
-    <div class="now">
-      <span class="now-no" id="now-no">No. 1</span>
-      <strong id="now-card">No alarm clock. Just the sun.</strong>
-      <span class="now-meta" id="now-meta">18s &middot; 1 of 30</span>
     </div>
-  </div>
-  <div class="playlist" id="playlist">
-    <button class="clip" type="button" data-i="0" data-src="video/01_wake_with_the_light.mp4" data-poster="assets/img/posters/01_wake_with_the_light.jpg" title="No. 1: No alarm clock. Just the sun."><img src="assets/img/posters/01_wake_with_the_light.jpg" alt="No. 1 — No alarm clock. Just the sun." loading="lazy" width="360" height="640"><span class="clip-no">01</span></button>
-    <button class="clip" type="button" data-i="1" data-src="video/02_cold_water_face.mp4" data-poster="assets/img/posters/02_cold_water_face.jpg" title="No. 2: Cold water for the head, not the skin"><img src="assets/img/posters/02_cold_water_face.jpg" alt="No. 2 — Cold water for the head, not the skin" loading="lazy" width="360" height="640"><span class="clip-no">02</span></button>
-    <button class="clip" type="button" data-i="2" data-src="video/03_ten_minutes_outside.mp4" data-poster="assets/img/posters/03_ten_minutes_outside.jpg" title="No. 3: Ten minutes outside before anyone"><img src="assets/img/posters/03_ten_minutes_outside.jpg" alt="No. 3 — Ten minutes outside before anyone" loading="lazy" width="360" height="640"><span class="clip-no">03</span></button>
-    <button class="clip" type="button" data-i="3" data-src="video/04_walk_before_breakfast.mp4" data-poster="assets/img/posters/04_walk_before_breakfast.jpg" title="No. 4: Walk first. Eat after."><img src="assets/img/posters/04_walk_before_breakfast.jpg" alt="No. 4 — Walk first. Eat after." loading="lazy" width="360" height="640"><span class="clip-no">04</span></button>
-    <button class="clip" type="button" data-i="4" data-src="video/05_bread_that_chews.mp4" data-poster="assets/img/posters/05_bread_that_chews.jpg" title="No. 5: Eat food you have to chew"><img src="assets/img/posters/05_bread_that_chews.jpg" alt="No. 5 — Eat food you have to chew" loading="lazy" width="360" height="640"><span class="clip-no">05</span></button>
-    <button class="clip" type="button" data-i="5" data-src="video/06_eat_whats_in_season.mp4" data-poster="assets/img/posters/06_eat_whats_in_season.jpg" title="No. 6: Nothing out of season"><img src="assets/img/posters/06_eat_whats_in_season.jpg" alt="No. 6 — Nothing out of season" loading="lazy" width="360" height="640"><span class="clip-no">06</span></button>
-    <button class="clip" type="button" data-i="6" data-src="video/07_the_pot_that_never_empties.mp4" data-poster="assets/img/posters/07_the_pot_that_never_empties.jpg" title="No. 7: The pot that never empties"><img src="assets/img/posters/07_the_pot_that_never_empties.jpg" alt="No. 7 — The pot that never empties" loading="lazy" width="360" height="640"><span class="clip-no">07</span></button>
-    <button class="clip" type="button" data-i="7" data-src="video/08_sit_at_the_table.mp4" data-poster="assets/img/posters/08_sit_at_the_table.jpg" title="No. 8: Sit down at the table"><img src="assets/img/posters/08_sit_at_the_table.jpg" alt="No. 8 — Sit down at the table" loading="lazy" width="360" height="640"><span class="clip-no">08</span></button>
-    <button class="clip" type="button" data-i="8" data-src="video/09_hard_thing_first.mp4" data-poster="assets/img/posters/09_hard_thing_first.jpg" title="No. 9: Do the worst job first"><img src="assets/img/posters/09_hard_thing_first.jpg" alt="No. 9 — Do the worst job first" loading="lazy" width="360" height="640"><span class="clip-no">09</span></button>
-    <button class="clip" type="button" data-i="9" data-src="video/10_fix_it_dont_buy_it.mp4" data-poster="assets/img/posters/10_fix_it_dont_buy_it.jpg" title="No. 10: If it breaks, mend it"><img src="assets/img/posters/10_fix_it_dont_buy_it.jpg" alt="No. 10 — If it breaks, mend it" loading="lazy" width="360" height="640"><span class="clip-no">10</span></button>
-    <button class="clip" type="button" data-i="10" data-src="video/11_ten_minutes_of_nothing.mp4" data-poster="assets/img/posters/11_ten_minutes_of_nothing.jpg" title="No. 11: Ten minutes of doing nothing"><img src="assets/img/posters/11_ten_minutes_of_nothing.jpg" alt="No. 11 — Ten minutes of doing nothing" loading="lazy" width="360" height="640"><span class="clip-no">11</span></button>
-    <button class="clip" type="button" data-i="11" data-src="video/12_walk_after_dinner.mp4" data-poster="assets/img/posters/12_walk_after_dinner.jpg" title="No. 12: Ten minutes after the meal"><img src="assets/img/posters/12_walk_after_dinner.jpg" alt="No. 12 — Ten minutes after the meal" loading="lazy" width="360" height="640"><span class="clip-no">12</span></button>
-    <button class="clip" type="button" data-i="12" data-src="video/13_the_garden_you_can_walk_to.mp4" data-poster="assets/img/posters/13_the_garden_you_can_walk_to.jpg" title="No. 13: A garden ten steps from the door"><img src="assets/img/posters/13_the_garden_you_can_walk_to.jpg" alt="No. 13 — A garden ten steps from the door" loading="lazy" width="360" height="640"><span class="clip-no">13</span></button>
-    <button class="clip" type="button" data-i="13" data-src="video/14_grow_something_in_thirty_days.mp4" data-poster="assets/img/posters/14_grow_something_in_thirty_days.jpg" title="No. 14: Grow something in thirty days"><img src="assets/img/posters/14_grow_something_in_thirty_days.jpg" alt="No. 14 — Grow something in thirty days" loading="lazy" width="360" height="640"><span class="clip-no">14</span></button>
-    <button class="clip" type="button" data-i="14" data-src="video/15_sharpen_your_own_tools.mp4" data-poster="assets/img/posters/15_sharpen_your_own_tools.jpg" title="No. 15: A blunt tool costs you the day"><img src="assets/img/posters/15_sharpen_your_own_tools.jpg" alt="No. 15 — A blunt tool costs you the day" loading="lazy" width="360" height="640"><span class="clip-no">15</span></button>
-    <button class="clip" type="button" data-i="15" data-src="video/16_fewer_better_things.mp4" data-poster="assets/img/posters/16_fewer_better_things.jpg" title="No. 16: One good coat. One good knife."><img src="assets/img/posters/16_fewer_better_things.jpg" alt="No. 16 — One good coat. One good knife." loading="lazy" width="360" height="640"><span class="clip-no">16</span></button>
-    <button class="clip" type="button" data-i="16" data-src="video/17_cash_you_can_feel.mp4" data-poster="assets/img/posters/17_cash_you_can_feel.jpg" title="No. 17: Pay cash. Feel it leave."><img src="assets/img/posters/17_cash_you_can_feel.jpg" alt="No. 17 — Pay cash. Feel it leave." loading="lazy" width="360" height="640"><span class="clip-no">17</span></button>
-    <button class="clip" type="button" data-i="17" data-src="video/18_keep_what_you_did_not_spend.mp4" data-poster="assets/img/posters/18_keep_what_you_did_not_spend.jpg" title="No. 18: Keep what you didn&#x27;t spend"><img src="assets/img/posters/18_keep_what_you_did_not_spend.jpg" alt="No. 18 — Keep what you didn&#x27;t spend" loading="lazy" width="360" height="640"><span class="clip-no">18</span></button>
-    <button class="clip" type="button" data-i="18" data-src="video/19_write_it_on_paper.mp4" data-poster="assets/img/posters/19_write_it_on_paper.jpg" title="No. 19: Write it on paper"><img src="assets/img/posters/19_write_it_on_paper.jpg" alt="No. 19 — Write it on paper" loading="lazy" width="360" height="640"><span class="clip-no">19</span></button>
-    <button class="clip" type="button" data-i="19" data-src="video/20_keep_a_paper_diary.mp4" data-poster="assets/img/posters/20_keep_a_paper_diary.jpg" title="No. 20: One line a day, in ink"><img src="assets/img/posters/20_keep_a_paper_diary.jpg" alt="No. 20 — One line a day, in ink" loading="lazy" width="360" height="640"><span class="clip-no">20</span></button>
-    <button class="clip" type="button" data-i="20" data-src="video/21_bed_with_the_dark.mp4" data-poster="assets/img/posters/21_bed_with_the_dark.jpg" title="No. 21: Go to bed with the dark"><img src="assets/img/posters/21_bed_with_the_dark.jpg" alt="No. 21 — Go to bed with the dark" loading="lazy" width="360" height="640"><span class="clip-no">21</span></button>
-    <button class="clip" type="button" data-i="21" data-src="video/22_no_clock_in_the_bedroom.mp4" data-poster="assets/img/posters/22_no_clock_in_the_bedroom.jpg" title="No. 22: No clock in the bedroom"><img src="assets/img/posters/22_no_clock_in_the_bedroom.jpg" alt="No. 22 — No clock in the bedroom" loading="lazy" width="360" height="640"><span class="clip-no">22</span></button>
-    <button class="clip" type="button" data-i="22" data-src="video/23_borrow_and_return.mp4" data-poster="assets/img/posters/23_borrow_and_return.jpg" title="No. 23: Borrow it, return it cleaner"><img src="assets/img/posters/23_borrow_and_return.jpg" alt="No. 23 — Borrow it, return it cleaner" loading="lazy" width="360" height="640"><span class="clip-no">23</span></button>
-    <button class="clip" type="button" data-i="23" data-src="video/24_knock_on_the_door.mp4" data-poster="assets/img/posters/24_knock_on_the_door.jpg" title="No. 24: Knock on the door"><img src="assets/img/posters/24_knock_on_the_door.jpg" alt="No. 24 — Knock on the door" loading="lazy" width="360" height="640"><span class="clip-no">24</span></button>
-    <button class="clip" type="button" data-i="24" data-src="video/25_say_nothing_first.mp4" data-poster="assets/img/posters/25_say_nothing_first.jpg" title="No. 25: Say nothing for a while"><img src="assets/img/posters/25_say_nothing_first.jpg" alt="No. 25 — Say nothing for a while" loading="lazy" width="360" height="640"><span class="clip-no">25</span></button>
-    <button class="clip" type="button" data-i="25" data-src="video/26_cook_once_eat_three_times.mp4" data-poster="assets/img/posters/26_cook_once_eat_three_times.jpg" title="No. 26: Cook once, eat three days"><img src="assets/img/posters/26_cook_once_eat_three_times.jpg" alt="No. 26 — Cook once, eat three days" loading="lazy" width="360" height="640"><span class="clip-no">26</span></button>
-    <button class="clip" type="button" data-i="26" data-src="video/27_learn_one_thing_by_hand.mp4" data-poster="assets/img/posters/27_learn_one_thing_by_hand.jpg" title="No. 27: Learn one thing by hand a year"><img src="assets/img/posters/27_learn_one_thing_by_hand.jpg" alt="No. 27 — Learn one thing by hand a year" loading="lazy" width="360" height="640"><span class="clip-no">27</span></button>
-    <button class="clip" type="button" data-i="27" data-src="video/28_the_sunday_walk.mp4" data-poster="assets/img/posters/28_the_sunday_walk.jpg" title="No. 28: The Sunday walk. No destination."><img src="assets/img/posters/28_the_sunday_walk.jpg" alt="No. 28 — The Sunday walk. No destination." loading="lazy" width="360" height="640"><span class="clip-no">28</span></button>
-    <button class="clip" type="button" data-i="28" data-src="video/29_eat_the_ugly_one.mp4" data-poster="assets/img/posters/29_eat_the_ugly_one.jpg" title="No. 29: Eat the ugly one"><img src="assets/img/posters/29_eat_the_ugly_one.jpg" alt="No. 29 — Eat the ugly one" loading="lazy" width="360" height="640"><span class="clip-no">29</span></button>
-    <button class="clip" type="button" data-i="29" data-src="video/30_the_thirty_day_rule.mp4" data-poster="assets/img/posters/30_the_thirty_day_rule.jpg" title="No. 30: Pick one. Do it thirty days."><img src="assets/img/posters/30_the_thirty_day_rule.jpg" alt="No. 30 — Pick one. Do it thirty days." loading="lazy" width="360" height="640"><span class="clip-no">30</span></button>
-  </div>
-</section>
+  </section>
 
-<section id="thirty" class="thirty">
-  <div class="head">
-    <h2>The thirty, in order</h2>
-    <p class="sub">Two of these are worth a week on their own. Most people keep one.</p>
-  </div>
-  <div class="grid">
-    <article class="card"><img src="assets/img/habits/01_wake_with_the_light.jpg" alt="No alarm clock. Just the sun." loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">01</span><h3>No alarm clock. Just the sun.</h3></div></article>
-    <article class="card"><img src="assets/img/habits/02_cold_water_face.jpg" alt="Cold water for the head, not the skin" loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">02</span><h3>Cold water for the head, not the skin</h3></div></article>
-    <article class="card"><img src="assets/img/habits/03_ten_minutes_outside.jpg" alt="Ten minutes outside before anyone" loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">03</span><h3>Ten minutes outside before anyone</h3></div></article>
-    <article class="card"><img src="assets/img/habits/04_walk_before_breakfast.jpg" alt="Walk first. Eat after." loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">04</span><h3>Walk first. Eat after.</h3></div></article>
-    <article class="card"><img src="assets/img/habits/05_bread_that_chews.jpg" alt="Eat food you have to chew" loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">05</span><h3>Eat food you have to chew</h3></div></article>
-    <article class="card"><img src="assets/img/habits/06_eat_whats_in_season.jpg" alt="Nothing out of season" loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">06</span><h3>Nothing out of season</h3></div></article>
-    <article class="card"><img src="assets/img/habits/07_the_pot_that_never_empties.jpg" alt="The pot that never empties" loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">07</span><h3>The pot that never empties</h3></div></article>
-    <article class="card"><img src="assets/img/habits/08_sit_at_the_table.jpg" alt="Sit down at the table" loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">08</span><h3>Sit down at the table</h3></div></article>
-    <article class="card"><img src="assets/img/habits/09_hard_thing_first.jpg" alt="Do the worst job first" loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">09</span><h3>Do the worst job first</h3></div></article>
-    <article class="card"><img src="assets/img/habits/10_fix_it_dont_buy_it.jpg" alt="If it breaks, mend it" loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">10</span><h3>If it breaks, mend it</h3></div></article>
-    <article class="card"><img src="assets/img/habits/11_ten_minutes_of_nothing.jpg" alt="Ten minutes of doing nothing" loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">11</span><h3>Ten minutes of doing nothing</h3></div></article>
-    <article class="card"><img src="assets/img/habits/12_walk_after_dinner.jpg" alt="Ten minutes after the meal" loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">12</span><h3>Ten minutes after the meal</h3></div></article>
-    <article class="card"><img src="assets/img/habits/13_the_garden_you_can_walk_to.jpg" alt="A garden ten steps from the door" loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">13</span><h3>A garden ten steps from the door</h3></div></article>
-    <article class="card"><img src="assets/img/habits/14_grow_something_in_thirty_days.jpg" alt="Grow something in thirty days" loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">14</span><h3>Grow something in thirty days</h3></div></article>
-    <article class="card"><img src="assets/img/habits/15_sharpen_your_own_tools.jpg" alt="A blunt tool costs you the day" loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">15</span><h3>A blunt tool costs you the day</h3></div></article>
-    <article class="card"><img src="assets/img/habits/16_fewer_better_things.jpg" alt="One good coat. One good knife." loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">16</span><h3>One good coat. One good knife.</h3></div></article>
-    <article class="card"><img src="assets/img/habits/17_cash_you_can_feel.jpg" alt="Pay cash. Feel it leave." loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">17</span><h3>Pay cash. Feel it leave.</h3></div></article>
-    <article class="card"><img src="assets/img/habits/18_keep_what_you_did_not_spend.jpg" alt="Keep what you didn&#x27;t spend" loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">18</span><h3>Keep what you didn&#x27;t spend</h3></div></article>
-    <article class="card"><img src="assets/img/habits/19_write_it_on_paper.jpg" alt="Write it on paper" loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">19</span><h3>Write it on paper</h3></div></article>
-    <article class="card"><img src="assets/img/habits/20_keep_a_paper_diary.jpg" alt="One line a day, in ink" loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">20</span><h3>One line a day, in ink</h3></div></article>
-    <article class="card"><img src="assets/img/habits/21_bed_with_the_dark.jpg" alt="Go to bed with the dark" loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">21</span><h3>Go to bed with the dark</h3></div></article>
-    <article class="card"><img src="assets/img/habits/22_no_clock_in_the_bedroom.jpg" alt="No clock in the bedroom" loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">22</span><h3>No clock in the bedroom</h3></div></article>
-    <article class="card"><img src="assets/img/habits/23_borrow_and_return.jpg" alt="Borrow it, return it cleaner" loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">23</span><h3>Borrow it, return it cleaner</h3></div></article>
-    <article class="card"><img src="assets/img/habits/24_knock_on_the_door.jpg" alt="Knock on the door" loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">24</span><h3>Knock on the door</h3></div></article>
-    <article class="card"><img src="assets/img/habits/25_say_nothing_first.jpg" alt="Say nothing for a while" loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">25</span><h3>Say nothing for a while</h3></div></article>
-    <article class="card"><img src="assets/img/habits/26_cook_once_eat_three_times.jpg" alt="Cook once, eat three days" loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">26</span><h3>Cook once, eat three days</h3></div></article>
-    <article class="card"><img src="assets/img/habits/27_learn_one_thing_by_hand.jpg" alt="Learn one thing by hand a year" loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">27</span><h3>Learn one thing by hand a year</h3></div></article>
-    <article class="card"><img src="assets/img/habits/28_the_sunday_walk.jpg" alt="The Sunday walk. No destination." loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">28</span><h3>The Sunday walk. No destination.</h3></div></article>
-    <article class="card"><img src="assets/img/habits/29_eat_the_ugly_one.jpg" alt="Eat the ugly one" loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">29</span><h3>Eat the ugly one</h3></div></article>
-    <article class="card"><img src="assets/img/habits/30_the_thirty_day_rule.jpg" alt="Pick one. Do it thirty days." loading="lazy" width="380" height="580"><div class="card-body"><span class="card-no">30</span><h3>Pick one. Do it thirty days.</h3></div></article>
-  </div>
-</section>
-
-<section id="printable" class="printable">
-  <figure class="book">
-    <img src="assets/img/cover.jpg" alt="The Old Ways 30-Day Reset workbook cover">
-  </figure>
-  <div class="printable-copy">
-    <p class="eyebrow">Printable &middot; 34 pages &middot; A4</p>
-    <h2>The Old Ways 30-Day Reset</h2>
-    <p>The whole thirty days on paper. One page per habit: the habit, why it worked, exactly what to
-    do today, a box to tick and a few lines to write what happened. A fridge sheet with thirty
-    numbered boxes. A closing page that asks the only question that matters.</p>
-    <ul class="ticks">
-      <li>One habit a day, numbered, with room to write</li>
-      <li>A fridge tracker you tick once a day</li>
-      <li>Print it all, or just the days you want</li>
-      <li>Instant download — no account, no app</li>
-    </ul>
-    <p class="actions"><a class="btn" href="https://dennireed.gumroad.com/l/clewwj">Buy for $12</a></p>
-    <p class="tiny">Delivered by Gumroad. Card details never touch this site.</p>
-  </div>
-</section>
-
-<section class="signup-band">
-  <div>
-    <h2>Five days, free, by email</h2>
-    <p>The first five habits as one printable page — the printable's first week, so you can see
-    whether this suits you before spending anything.</p>
-  </div>
-  <form class="signup" action="/subscribe.php" method="post">
-    <div class="field">
-      <input type="email" name="email" placeholder="you@example.com" required aria-label="Your email">
-      <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <button type="submit">Send me the first five</button>
+  <!-- ── the product ── -->
+  <section class="printable" id="the-printable">
+    <figure class="book">
+      <img src="assets/img/cover.jpg" width="720" height="720"
+           alt="Cover of The Old Ways 30-Day Reset, a printable workbook.">
+    </figure>
+    <div>
+      <p class="eyebrow">Printable · 34 pages · A4</p>
+      <h2>The Old Ways 30-Day Reset</h2>
+      <p>The whole thirty days on paper. One page per habit: the habit, why it worked, exactly
+      what to do today, a box to tick and a few lines to write what happened. A fridge sheet
+      with thirty numbered boxes. A closing page that asks the only question that matters.</p>
+      <ul class="ticks">
+        <li>One habit a day, numbered, with room to write</li>
+        <li>A fridge tracker you tick once a day</li>
+        <li>Print it all, or just the days you want</li>
+        <li>Instant download — no account, no app</li>
+      </ul>
+      <a class="btn" href="https://dennireed.gumroad.com/l/clewwj">Buy for $12</a>
+      <p class="tiny">Delivered by Gumroad. Card details never touch this site.</p>
     </div>
-    <p class="tiny">No newsletter, no daily emails, no selling your address.</p>
-  </form>
-</section>
+  </section>
 
-<section class="about">
-  <h2>Who is telling you this</h2>
-  <p>Silas is an <strong>AI-generated character, not a real person</strong>. The face, the voice and
-  the pictures are made with AI. The habits are the real part — gathered, written and argued over by
-  a person, then read out in a fictional voice.</p>
-  <p>No cures, no hacks, no supplements, and nothing here is medical, dietary or financial advice.
-  If a doctor or an adviser has told you otherwise, they win.</p>
-</section>
-
+  <!-- ── the disclosure. Once. ── -->
+  <section class="about">
+    <h2>Who is telling you this</h2>
+    <p>Silas is an AI-generated character, not a real person. The face, the voice and the
+    pictures are made with AI. The habits are the real part — gathered, written and argued
+    over by a person, then read out in a fictional voice.</p>
+    <p>No cures, no hacks, no supplements, and nothing here is medical, dietary or financial
+    advice. If a doctor or an adviser has told you otherwise, they win.</p>
+  </section>
 </main>
 
 <footer class="foot">
-  <p>Old Ways, One A Day &middot; <a href="https://dennireed.gumroad.com/l/clewwj">The printable</a> &middot;
-  <a href="https://www.facebook.com/oldwaysoneaday">Facebook</a> &middot; <a href="mailto:dennisreed143@gmail.com">Contact</a></p>
-  <p class="tiny">An AI-generated character. Not medical, dietary or financial advice.</p>
+  <p><strong>Old Ways, One A Day</strong> — thirty old-fashioned habits, numbered.</p>
+  <p><a href="https://dennireed.gumroad.com/l/clewwj">The 30-day printable</a> · <a href="/starter.pdf">The free five-day starter</a> ·
+  <a href="https://www.facebook.com/oldwaysoneaday">Facebook</a></p>
 </footer>
 
+<!-- ── the Watch popup: all thirty, starting with the first one ── -->
+<div class="modal" id="modal" hidden>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-label="Watch Old Ways, One A Day">
+    <button class="modal-close" id="modal-close" type="button" aria-label="Close">Close</button>
+    <div class="modal-main">
+      <video id="player" controls playsinline preload="metadata"
+             poster="assets/img/posters/01_wake_with_the_light.jpg" width="360" height="640"></video>
+      <div class="now">
+        <span class="now-no" id="now-no">No. 1</span>
+        <strong id="now-card">No alarm clock. Just the sun.</strong>
+        <p class="now-meta">Thirty habits, one a day. This one plays next automatically.</p>
+        <p class="now-actions">
+          <a class="btn" href="https://dennireed.gumroad.com/l/clewwj">The printable — $12</a>
+        </p>
+      </div>
+    </div>
+    <div class="playlist" id="playlist">
+      <button class="clip" type="button" data-i="0" data-no="1" data-card="No alarm clock. Just the sun." data-src="video/01_wake_with_the_light.mp4" data-poster="assets/img/posters/01_wake_with_the_light.jpg" aria-label="Play number 1: No alarm clock. Just the sun.">
+        <img src="assets/img/posters/01_wake_with_the_light.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">01</span>
+      </button>
+      <button class="clip" type="button" data-i="1" data-no="2" data-card="Cold water for the head, not the skin" data-src="video/02_cold_water_face.mp4" data-poster="assets/img/posters/02_cold_water_face.jpg" aria-label="Play number 2: Cold water for the head, not the skin">
+        <img src="assets/img/posters/02_cold_water_face.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">02</span>
+      </button>
+      <button class="clip" type="button" data-i="2" data-no="3" data-card="Ten minutes outside before anyone" data-src="video/03_ten_minutes_outside.mp4" data-poster="assets/img/posters/03_ten_minutes_outside.jpg" aria-label="Play number 3: Ten minutes outside before anyone">
+        <img src="assets/img/posters/03_ten_minutes_outside.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">03</span>
+      </button>
+      <button class="clip" type="button" data-i="3" data-no="4" data-card="Walk first. Eat after." data-src="video/04_walk_before_breakfast.mp4" data-poster="assets/img/posters/04_walk_before_breakfast.jpg" aria-label="Play number 4: Walk first. Eat after.">
+        <img src="assets/img/posters/04_walk_before_breakfast.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">04</span>
+      </button>
+      <button class="clip" type="button" data-i="4" data-no="5" data-card="Eat food you have to chew" data-src="video/05_bread_that_chews.mp4" data-poster="assets/img/posters/05_bread_that_chews.jpg" aria-label="Play number 5: Eat food you have to chew">
+        <img src="assets/img/posters/05_bread_that_chews.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">05</span>
+      </button>
+      <button class="clip" type="button" data-i="5" data-no="6" data-card="Nothing out of season" data-src="video/06_eat_whats_in_season.mp4" data-poster="assets/img/posters/06_eat_whats_in_season.jpg" aria-label="Play number 6: Nothing out of season">
+        <img src="assets/img/posters/06_eat_whats_in_season.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">06</span>
+      </button>
+      <button class="clip" type="button" data-i="6" data-no="7" data-card="The pot that never empties" data-src="video/07_the_pot_that_never_empties.mp4" data-poster="assets/img/posters/07_the_pot_that_never_empties.jpg" aria-label="Play number 7: The pot that never empties">
+        <img src="assets/img/posters/07_the_pot_that_never_empties.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">07</span>
+      </button>
+      <button class="clip" type="button" data-i="7" data-no="8" data-card="Sit down at the table" data-src="video/08_sit_at_the_table.mp4" data-poster="assets/img/posters/08_sit_at_the_table.jpg" aria-label="Play number 8: Sit down at the table">
+        <img src="assets/img/posters/08_sit_at_the_table.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">08</span>
+      </button>
+      <button class="clip" type="button" data-i="8" data-no="9" data-card="Do the worst job first" data-src="video/09_hard_thing_first.mp4" data-poster="assets/img/posters/09_hard_thing_first.jpg" aria-label="Play number 9: Do the worst job first">
+        <img src="assets/img/posters/09_hard_thing_first.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">09</span>
+      </button>
+      <button class="clip" type="button" data-i="9" data-no="10" data-card="If it breaks, mend it" data-src="video/10_fix_it_dont_buy_it.mp4" data-poster="assets/img/posters/10_fix_it_dont_buy_it.jpg" aria-label="Play number 10: If it breaks, mend it">
+        <img src="assets/img/posters/10_fix_it_dont_buy_it.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">10</span>
+      </button>
+      <button class="clip" type="button" data-i="10" data-no="11" data-card="Ten minutes of doing nothing" data-src="video/11_ten_minutes_of_nothing.mp4" data-poster="assets/img/posters/11_ten_minutes_of_nothing.jpg" aria-label="Play number 11: Ten minutes of doing nothing">
+        <img src="assets/img/posters/11_ten_minutes_of_nothing.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">11</span>
+      </button>
+      <button class="clip" type="button" data-i="11" data-no="12" data-card="Ten minutes after the meal" data-src="video/12_walk_after_dinner.mp4" data-poster="assets/img/posters/12_walk_after_dinner.jpg" aria-label="Play number 12: Ten minutes after the meal">
+        <img src="assets/img/posters/12_walk_after_dinner.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">12</span>
+      </button>
+      <button class="clip" type="button" data-i="12" data-no="13" data-card="A garden ten steps from the door" data-src="video/13_the_garden_you_can_walk_to.mp4" data-poster="assets/img/posters/13_the_garden_you_can_walk_to.jpg" aria-label="Play number 13: A garden ten steps from the door">
+        <img src="assets/img/posters/13_the_garden_you_can_walk_to.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">13</span>
+      </button>
+      <button class="clip" type="button" data-i="13" data-no="14" data-card="Grow something in thirty days" data-src="video/14_grow_something_in_thirty_days.mp4" data-poster="assets/img/posters/14_grow_something_in_thirty_days.jpg" aria-label="Play number 14: Grow something in thirty days">
+        <img src="assets/img/posters/14_grow_something_in_thirty_days.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">14</span>
+      </button>
+      <button class="clip" type="button" data-i="14" data-no="15" data-card="A blunt tool costs you the day" data-src="video/15_sharpen_your_own_tools.mp4" data-poster="assets/img/posters/15_sharpen_your_own_tools.jpg" aria-label="Play number 15: A blunt tool costs you the day">
+        <img src="assets/img/posters/15_sharpen_your_own_tools.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">15</span>
+      </button>
+      <button class="clip" type="button" data-i="15" data-no="16" data-card="One good coat. One good knife." data-src="video/16_fewer_better_things.mp4" data-poster="assets/img/posters/16_fewer_better_things.jpg" aria-label="Play number 16: One good coat. One good knife.">
+        <img src="assets/img/posters/16_fewer_better_things.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">16</span>
+      </button>
+      <button class="clip" type="button" data-i="16" data-no="17" data-card="Pay cash. Feel it leave." data-src="video/17_cash_you_can_feel.mp4" data-poster="assets/img/posters/17_cash_you_can_feel.jpg" aria-label="Play number 17: Pay cash. Feel it leave.">
+        <img src="assets/img/posters/17_cash_you_can_feel.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">17</span>
+      </button>
+      <button class="clip" type="button" data-i="17" data-no="18" data-card="Keep what you didn't spend" data-src="video/18_keep_what_you_did_not_spend.mp4" data-poster="assets/img/posters/18_keep_what_you_did_not_spend.jpg" aria-label="Play number 18: Keep what you didn't spend">
+        <img src="assets/img/posters/18_keep_what_you_did_not_spend.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">18</span>
+      </button>
+      <button class="clip" type="button" data-i="18" data-no="19" data-card="Write it on paper" data-src="video/19_write_it_on_paper.mp4" data-poster="assets/img/posters/19_write_it_on_paper.jpg" aria-label="Play number 19: Write it on paper">
+        <img src="assets/img/posters/19_write_it_on_paper.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">19</span>
+      </button>
+      <button class="clip" type="button" data-i="19" data-no="20" data-card="One line a day, in ink" data-src="video/20_keep_a_paper_diary.mp4" data-poster="assets/img/posters/20_keep_a_paper_diary.jpg" aria-label="Play number 20: One line a day, in ink">
+        <img src="assets/img/posters/20_keep_a_paper_diary.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">20</span>
+      </button>
+      <button class="clip" type="button" data-i="20" data-no="21" data-card="Go to bed with the dark" data-src="video/21_bed_with_the_dark.mp4" data-poster="assets/img/posters/21_bed_with_the_dark.jpg" aria-label="Play number 21: Go to bed with the dark">
+        <img src="assets/img/posters/21_bed_with_the_dark.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">21</span>
+      </button>
+      <button class="clip" type="button" data-i="21" data-no="22" data-card="No clock in the bedroom" data-src="video/22_no_clock_in_the_bedroom.mp4" data-poster="assets/img/posters/22_no_clock_in_the_bedroom.jpg" aria-label="Play number 22: No clock in the bedroom">
+        <img src="assets/img/posters/22_no_clock_in_the_bedroom.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">22</span>
+      </button>
+      <button class="clip" type="button" data-i="22" data-no="23" data-card="Borrow it, return it cleaner" data-src="video/23_borrow_and_return.mp4" data-poster="assets/img/posters/23_borrow_and_return.jpg" aria-label="Play number 23: Borrow it, return it cleaner">
+        <img src="assets/img/posters/23_borrow_and_return.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">23</span>
+      </button>
+      <button class="clip" type="button" data-i="23" data-no="24" data-card="Knock on the door" data-src="video/24_knock_on_the_door.mp4" data-poster="assets/img/posters/24_knock_on_the_door.jpg" aria-label="Play number 24: Knock on the door">
+        <img src="assets/img/posters/24_knock_on_the_door.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">24</span>
+      </button>
+      <button class="clip" type="button" data-i="24" data-no="25" data-card="Say nothing for a while" data-src="video/25_say_nothing_first.mp4" data-poster="assets/img/posters/25_say_nothing_first.jpg" aria-label="Play number 25: Say nothing for a while">
+        <img src="assets/img/posters/25_say_nothing_first.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">25</span>
+      </button>
+      <button class="clip" type="button" data-i="25" data-no="26" data-card="Cook once, eat three days" data-src="video/26_cook_once_eat_three_times.mp4" data-poster="assets/img/posters/26_cook_once_eat_three_times.jpg" aria-label="Play number 26: Cook once, eat three days">
+        <img src="assets/img/posters/26_cook_once_eat_three_times.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">26</span>
+      </button>
+      <button class="clip" type="button" data-i="26" data-no="27" data-card="Learn one thing by hand a year" data-src="video/27_learn_one_thing_by_hand.mp4" data-poster="assets/img/posters/27_learn_one_thing_by_hand.jpg" aria-label="Play number 27: Learn one thing by hand a year">
+        <img src="assets/img/posters/27_learn_one_thing_by_hand.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">27</span>
+      </button>
+      <button class="clip" type="button" data-i="27" data-no="28" data-card="The Sunday walk. No destination." data-src="video/28_the_sunday_walk.mp4" data-poster="assets/img/posters/28_the_sunday_walk.jpg" aria-label="Play number 28: The Sunday walk. No destination.">
+        <img src="assets/img/posters/28_the_sunday_walk.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">28</span>
+      </button>
+      <button class="clip" type="button" data-i="28" data-no="29" data-card="Eat the ugly one" data-src="video/29_eat_the_ugly_one.mp4" data-poster="assets/img/posters/29_eat_the_ugly_one.jpg" aria-label="Play number 29: Eat the ugly one">
+        <img src="assets/img/posters/29_eat_the_ugly_one.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">29</span>
+      </button>
+      <button class="clip" type="button" data-i="29" data-no="30" data-card="Pick one. Do it thirty days." data-src="video/30_the_thirty_day_rule.mp4" data-poster="assets/img/posters/30_the_thirty_day_rule.jpg" aria-label="Play number 30: Pick one. Do it thirty days.">
+        <img src="assets/img/posters/30_the_thirty_day_rule.jpg" alt="" loading="lazy" width="180" height="320">
+        <span class="clip-no">30</span>
+      </button>
+    </div>
+  </div>
+</div>
+
 <script>
-const CLIPS = [{"no": 1, "card": "No alarm clock. Just the sun.", "video": "video/01_wake_with_the_light.mp4", "poster": "assets/img/posters/01_wake_with_the_light.jpg", "secs": 18}, {"no": 2, "card": "Cold water for the head, not the skin", "video": "video/02_cold_water_face.mp4", "poster": "assets/img/posters/02_cold_water_face.jpg", "secs": 14}, {"no": 3, "card": "Ten minutes outside before anyone", "video": "video/03_ten_minutes_outside.mp4", "poster": "assets/img/posters/03_ten_minutes_outside.jpg", "secs": 14}, {"no": 4, "card": "Walk first. Eat after.", "video": "video/04_walk_before_breakfast.mp4", "poster": "assets/img/posters/04_walk_before_breakfast.jpg", "secs": 18}, {"no": 5, "card": "Eat food you have to chew", "video": "video/05_bread_that_chews.mp4", "poster": "assets/img/posters/05_bread_that_chews.jpg", "secs": 18}, {"no": 6, "card": "Nothing out of season", "video": "video/06_eat_whats_in_season.mp4", "poster": "assets/img/posters/06_eat_whats_in_season.jpg", "secs": 14}, {"no": 7, "card": "The pot that never empties", "video": "video/07_the_pot_that_never_empties.mp4", "poster": "assets/img/posters/07_the_pot_that_never_empties.jpg", "secs": 18}, {"no": 8, "card": "Sit down at the table", "video": "video/08_sit_at_the_table.mp4", "poster": "assets/img/posters/08_sit_at_the_table.jpg", "secs": 16}, {"no": 9, "card": "Do the worst job first", "video": "video/09_hard_thing_first.mp4", "poster": "assets/img/posters/09_hard_thing_first.jpg", "secs": 18}, {"no": 10, "card": "If it breaks, mend it", "video": "video/10_fix_it_dont_buy_it.mp4", "poster": "assets/img/posters/10_fix_it_dont_buy_it.jpg", "secs": 18}, {"no": 11, "card": "Ten minutes of doing nothing", "video": "video/11_ten_minutes_of_nothing.mp4", "poster": "assets/img/posters/11_ten_minutes_of_nothing.jpg", "secs": 18}, {"no": 12, "card": "Ten minutes after the meal", "video": "video/12_walk_after_dinner.mp4", "poster": "assets/img/posters/12_walk_after_dinner.jpg", "secs": 13}, {"no": 13, "card": "A garden ten steps from the door", "video": "video/13_the_garden_you_can_walk_to.mp4", "poster": "assets/img/posters/13_the_garden_you_can_walk_to.jpg", "secs": 18}, {"no": 14, "card": "Grow something in thirty days", "video": "video/14_grow_something_in_thirty_days.mp4", "poster": "assets/img/posters/14_grow_something_in_thirty_days.jpg", "secs": 18}, {"no": 15, "card": "A blunt tool costs you the day", "video": "video/15_sharpen_your_own_tools.mp4", "poster": "assets/img/posters/15_sharpen_your_own_tools.jpg", "secs": 18}, {"no": 16, "card": "One good coat. One good knife.", "video": "video/16_fewer_better_things.mp4", "poster": "assets/img/posters/16_fewer_better_things.jpg", "secs": 18}, {"no": 17, "card": "Pay cash. Feel it leave.", "video": "video/17_cash_you_can_feel.mp4", "poster": "assets/img/posters/17_cash_you_can_feel.jpg", "secs": 18}, {"no": 18, "card": "Keep what you didn't spend", "video": "video/18_keep_what_you_did_not_spend.mp4", "poster": "assets/img/posters/18_keep_what_you_did_not_spend.jpg", "secs": 18}, {"no": 19, "card": "Write it on paper", "video": "video/19_write_it_on_paper.mp4", "poster": "assets/img/posters/19_write_it_on_paper.jpg", "secs": 18}, {"no": 20, "card": "One line a day, in ink", "video": "video/20_keep_a_paper_diary.mp4", "poster": "assets/img/posters/20_keep_a_paper_diary.jpg", "secs": 18}, {"no": 21, "card": "Go to bed with the dark", "video": "video/21_bed_with_the_dark.mp4", "poster": "assets/img/posters/21_bed_with_the_dark.jpg", "secs": 18}, {"no": 22, "card": "No clock in the bedroom", "video": "video/22_no_clock_in_the_bedroom.mp4", "poster": "assets/img/posters/22_no_clock_in_the_bedroom.jpg", "secs": 15}, {"no": 23, "card": "Borrow it, return it cleaner", "video": "video/23_borrow_and_return.mp4", "poster": "assets/img/posters/23_borrow_and_return.jpg", "secs": 18}, {"no": 24, "card": "Knock on the door", "video": "video/24_knock_on_the_door.mp4", "poster": "assets/img/posters/24_knock_on_the_door.jpg", "secs": 18}, {"no": 25, "card": "Say nothing for a while", "video": "video/25_say_nothing_first.mp4", "poster": "assets/img/posters/25_say_nothing_first.jpg", "secs": 18}, {"no": 26, "card": "Cook once, eat three days", "video": "video/26_cook_once_eat_three_times.mp4", "poster": "assets/img/posters/26_cook_once_eat_three_times.jpg", "secs": 18}, {"no": 27, "card": "Learn one thing by hand a year", "video": "video/27_learn_one_thing_by_hand.mp4", "poster": "assets/img/posters/27_learn_one_thing_by_hand.jpg", "secs": 18}, {"no": 28, "card": "The Sunday walk. No destination.", "video": "video/28_the_sunday_walk.mp4", "poster": "assets/img/posters/28_the_sunday_walk.jpg", "secs": 18}, {"no": 29, "card": "Eat the ugly one", "video": "video/29_eat_the_ugly_one.mp4", "poster": "assets/img/posters/29_eat_the_ugly_one.jpg", "secs": 18}, {"no": 30, "card": "Pick one. Do it thirty days.", "video": "video/30_the_thirty_day_rule.mp4", "poster": "assets/img/posters/30_the_thirty_day_rule.jpg", "secs": 18}];
-const player = document.getElementById('player');
-const nowNo = document.getElementById('now-no');
-const nowCard = document.getElementById('now-card');
-const nowMeta = document.getElementById('now-meta');
-const buttons = Array.from(document.querySelectorAll('.clip'));
-let current = 0;
+(function () {
+  var clips  = Array.prototype.slice.call(document.querySelectorAll('.clip'));
+  var modal  = document.getElementById('modal');
+  var player = document.getElementById('player');
+  var nowNo  = document.getElementById('now-no');
+  var nowCard= document.getElementById('now-card');
+  var cur = 0;
 
-function load(i, autoplay) {
-  const c = CLIPS[i];
-  if (!c || !c.video) return;
-  current = i;
-  player.src = c.video;
-  player.poster = c.poster || '';
-  nowNo.textContent = 'No. ' + c.no;
-  nowCard.textContent = c.card;
-  nowMeta.textContent = c.secs + 's · ' + (i + 1) + ' of ' + CLIPS.length;
-  buttons.forEach((b, j) => b.classList.toggle('playing', j === i));
-  if (autoplay) player.play().catch(() => {});
-}
+  function show(i, play) {
+    var b = clips[i];
+    if (!b) return;
+    cur = i;
+    player.src = b.dataset.src;
+    player.poster = b.dataset.poster;
+    nowNo.textContent = 'No. ' + b.dataset.no;
+    nowCard.textContent = b.dataset.card;
+    clips.forEach(function (c, j) { c.classList.toggle('playing', j === i); });
+    if (play) { player.play().catch(function () {}); }
+  }
 
-buttons.forEach((b, i) => b.addEventListener('click', () => {
-  load(i, true);
-  player.scrollIntoView({ behavior: 'smooth', block: 'center' });
-}));
+  function open(i) {
+    modal.hidden = false;
+    document.body.classList.add('locked');
+    show(i, true);
+  }
 
-// finish one and the next starts by itself — the whole point of hosting it here
-player.addEventListener('ended', () => {
-  const next = (current + 1) % CLIPS.length;
-  buttons[next].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  load(next, true);
-});
+  function close() {
+    player.pause();
+    modal.hidden = true;
+    document.body.classList.remove('locked');
+  }
 
-load(0, false);
+  document.getElementById('watch-hero').addEventListener('click', function () { open(0); });
+  document.getElementById('watch-link').addEventListener('click', function () { open(0); });
+  document.getElementById('modal-close').addEventListener('click', close);
+  modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.hidden) close();
+  });
+  clips.forEach(function (c, i) {
+    c.addEventListener('click', function () { show(i, true); });
+  });
+  player.addEventListener('ended', function () {
+    show((cur + 1) % clips.length, true);   // keeps them here: one runs into the next
+  });
+
+  show(0, false);
+})();
 </script>
-
 </body>
 </html>
