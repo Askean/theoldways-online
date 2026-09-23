@@ -44,16 +44,29 @@ p { margin: 0 0 .8em; }
 .lede { font-size: clamp(17px, 1.5vw, 19px); max-width: 34em; }
 
 /* ── the faded backdrop ─────────────────────────────────────────────────── */
+/* No blur and no heavy fade: the countryside is the point of having it there at all. Legibility
+   comes from the light scrim below and from the soft panels the copy sits on, not from hiding
+   the photograph. `position: fixed` (rather than background-attachment) also behaves on iOS. */
 .backdrop {
   position: fixed; inset: 0; z-index: -1;
-  background: url("img/col_porch_dawn.jpg") center 30% / cover no-repeat;
-  opacity: .22;
-  filter: blur(3px) saturate(.85);
-  transform: scale(1.04);           /* hide the blurred edge */
+  background: url("img/field.jpg") center 42% / cover no-repeat;
 }
 .backdrop::after {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(246,243,236,.55), rgba(246,243,236,.9) 60%, #f6f3ec);
+  background: linear-gradient(180deg,
+    rgba(246, 243, 236, .46) 0%,
+    rgba(246, 243, 236, .26) 26%,
+    rgba(246, 243, 236, .38) 62%,
+    rgba(246, 243, 236, .68) 100%);
+}
+
+/* Copy sits on soft panels so the field stays visible around it without fighting the words. */
+.hero-copy, .printable > div, .about {
+  background: rgba(250, 248, 243, .70);
+  backdrop-filter: blur(3px) saturate(1.04);
+  border: 1px solid rgba(221, 213, 199, .7);
+  border-radius: 4px;
+  padding: clamp(16px, 2.2vw, 32px);
 }
 
 /* ── bar ────────────────────────────────────────────────────────────────── */
@@ -86,8 +99,10 @@ p { margin: 0 0 .8em; }
 }
 .portrait { margin: 0; }
 .portrait img {
-  width: 100%; display: block; border-radius: 3px;
-  box-shadow: 0 18px 44px rgba(34, 31, 26, .18);
+  width: 100%; height: auto; display: block; border-radius: 3px;
+  box-shadow: 0 18px 44px rgba(34, 31, 26, .28);
+  /* Deliberately NOT capped here: on a desktop screen the portrait shows at its true 842x1500
+     aspect, uncropped. The cap lives in the phone block, where space genuinely runs out. */
 }
 .hero-copy { max-width: 620px; }
 
@@ -130,7 +145,7 @@ p { margin: 0 0 .8em; }
   border-top: 1px solid var(--line);
 }
 .book { margin: 0; }
-.book img { width: 100%; display: block; border: 1px solid var(--line); border-radius: 3px; }
+.book img { width: 100%; height: auto; display: block; border: 1px solid var(--line); border-radius: 3px; }
 .ticks { list-style: none; padding: 0; margin: 0 0 1.2em; }
 .ticks li { padding-left: 24px; position: relative; margin-bottom: .34em; }
 .ticks li::before {
@@ -140,9 +155,9 @@ p { margin: 0 0 .8em; }
 
 /* ── the disclosure, once ───────────────────────────────────────────────── */
 .about {
-  max-width: 760px; margin: 0 auto;
-  padding: clamp(26px, 4vh, 56px) var(--pad) clamp(30px, 5vh, 64px);
-  border-top: 1px solid var(--line);
+  max-width: 800px; margin: 0 auto;
+  margin-top: clamp(26px, 4vh, 56px);
+  padding: clamp(20px, 2.6vw, 38px);
 }
 
 /* ── footer ─────────────────────────────────────────────────────────────── */
@@ -231,7 +246,7 @@ p { margin: 0 0 .8em; }
      buttons still land on the first phone screen instead of just below it. */
   .field input[type=email] { flex: 1 1 150px; min-width: 130px; padding: 13px 12px; }
   .field button { padding: 13px 16px; font-size: 14px; }
-  .portrait img { max-height: 34vh; }
+  .portrait img { max-height: 30vh; }
   h1 { font-size: clamp(27px, 8vw, 34px); }
   .lede { font-size: 16px; }
   .hero { padding-top: 12px; }
