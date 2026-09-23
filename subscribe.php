@@ -54,6 +54,11 @@ if (!$known) {
     fclose($fh);
 }
 
+// Hosting-side sending. TRUE only until SES takes over: once Hermes is delivering the starter
+// (products/send_starter_ses.py), flip this to false so exactly one sender exists and nobody gets
+// two copies. The address is stored either way, so nothing is lost while this is off.
+$HOST_SENDS_STARTER = true;
+
 // Starter delivery. If mail() is unavailable the address is still stored and can be sent by hand.
 $subject = 'The first five old ways';
 $body = "Here are the first five, as promised.\n\n"
@@ -65,8 +70,10 @@ $body = "Here are the first five, as promised.\n\n"
       . "The habits are the real part.\n\n"
       . "Nothing here is medical, dietary or financial advice.\n";
 $headers = "From: Old Ways, One A Day <{$FROM}>\r\nReply-To: {$OWNER}\r\nContent-Type: text/plain; charset=UTF-8\r\n";
-@mail($email, $subject, $body, $headers);
 
-@mail($OWNER, 'Old Ways signup: ' . $email, $body, "From: Old Ways <{$FROM}>\r\n");
+if ($HOST_SENDS_STARTER) {
+    @mail($email, $subject, $body, $headers);
+    @mail($OWNER, 'Old Ways signup: ' . $email, $body, "From: Old Ways <{$FROM}>\r\n");
+}
 
 back('sent');
