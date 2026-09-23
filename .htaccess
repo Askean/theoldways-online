@@ -3,26 +3,31 @@
 
 RewriteEngine On
 
-# 1) Always HTTPS
+# 1) One canonical host: the bare domain, which is what people type and print.
+#    Done before the HTTPS rule so a www+http request is a single hop, not two.
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# 2) Always HTTPS
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
-# 2) Serve .html extension-less, consolidating links onto the clean URL
+# 3) Serve .html extension-less, consolidating links onto the clean URL
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
 RewriteRule ^ /%1 [R=301,L]
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html [L]
 
-# 3) No directory listings, no index of the data folder
+# 4) No directory listings, no index of the data folder
 Options -Indexes
 
-# 4) The subscriber list is nobody's business
+# 5) The subscriber list is nobody's business
 <FilesMatch "^(subscribers\.csv|.*\.log)$">
   Require all denied
 </FilesMatch>
 RedirectMatch 404 ^/data/
 
-# 5) Sensible caching, but never for the HTML
+# 6) Sensible caching, but never for the HTML
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType image/jpeg "access plus 1 year"
