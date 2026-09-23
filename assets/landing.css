@@ -223,3 +223,16 @@ p { margin: 0 0 .8em; }
   .bar nav a.cta { padding: 9px 12px; font-size: 13px; white-space: nowrap; }
   .hero { padding-top: 18px; }
 }
+
+/* Phones. Declared AFTER the 860 block on purpose: at equal specificity the later rule wins,
+   so these must come second or the portrait cap below is silently overridden. */
+@media (max-width: 520px) {
+  /* Keep "Send them" beside the input and shorten the portrait further, so the Watch and buy
+     buttons still land on the first phone screen instead of just below it. */
+  .field input[type=email] { flex: 1 1 150px; min-width: 130px; padding: 13px 12px; }
+  .field button { padding: 13px 16px; font-size: 14px; }
+  .portrait img { max-height: 34vh; }
+  h1 { font-size: clamp(27px, 8vw, 34px); }
+  .lede { font-size: 16px; }
+  .hero { padding-top: 12px; }
+}
