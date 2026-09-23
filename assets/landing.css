@@ -164,7 +164,7 @@ p { margin: 0 0 .8em; }
 .modal[hidden] { display: none; }
 .modal-box {
   background: var(--paper); border-radius: 4px;
-  width: 100%; max-width: 940px; padding: clamp(12px, 2vw, 22px);
+  width: 100%; max-width: 860px; padding: clamp(12px, 2vw, 22px);
   box-shadow: 0 30px 80px rgba(0, 0, 0, .45);
   position: relative; margin: auto;
 }
@@ -209,9 +209,17 @@ p { margin: 0 0 .8em; }
 /* ── small screens ──────────────────────────────────────────────────────── */
 @media (max-width: 860px) {
   .hero-inner, .printable, .modal-main { grid-template-columns: 1fr; }
+  /* The portrait is 9:16 and at full width it fills the whole first screen, pushing the
+     opt-in and the buttons below the fold. Cap it so the copy lands on the first screen. */
+  .portrait img { max-height: 42vh; object-fit: cover; object-position: center 22%; }
   .portrait { max-width: 340px; margin: 0 auto; }
   .book img { max-width: 320px; margin: 0 auto; }
+  .modal-main { align-items: start; }
   .modal-main video { max-width: 240px; margin: 0 auto; }
   .playlist { max-height: 30vh; }
   .bar nav a:not(.cta) { display: none; }
+  .bar nav .link { display: none; }   /* the hero has its own Watch button */
+  .bar .brand { font-size: 15px; }
+  .bar nav a.cta { padding: 9px 12px; font-size: 13px; white-space: nowrap; }
+  .hero { padding-top: 18px; }
 }
