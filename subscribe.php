@@ -54,10 +54,10 @@ if (!$known) {
     fclose($fh);
 }
 
-// Hosting-side sending. TRUE only until SES takes over: once Hermes is delivering the starter
-// (products/send_starter_ses.py), flip this to false so exactly one sender exists and nobody gets
-// two copies. The address is stored either way, so nothing is lost while this is off.
-$HOST_SENDS_STARTER = true;
+// Hosting-side sending — now FALSE. The mailbox path is proven: hello@theoldways.online sends
+// over smtp.hostinger.com and the daily job delivers the starter from the queue. Leaving this on
+// would give every new subscriber two copies of the same email from two different senders.
+$HOST_SENDS_STARTER = false;
 
 // Starter delivery. If mail() is unavailable the address is still stored and can be sent by hand.
 $subject = 'The first five old ways';
