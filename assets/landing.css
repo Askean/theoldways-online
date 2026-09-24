@@ -49,7 +49,7 @@ p { margin: 0 0 .8em; }
    the photograph. `position: fixed` (rather than background-attachment) also behaves on iOS. */
 .backdrop {
   position: fixed; inset: 0; z-index: -1;
-  background: url("img/field.jpg") center 42% / cover no-repeat;
+  background: url("img/field_afternoon.jpg") center 42% / cover no-repeat;
 }
 .backdrop::after {
   content: ""; position: absolute; inset: 0;
